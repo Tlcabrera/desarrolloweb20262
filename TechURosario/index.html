@@ -128,7 +128,90 @@
             <td style="background-color: #F54927;">Informe</td>
         </tr>
     </table>
-    
+    <!-- Formularios -->
+    <form name="formulario" action="" method="post" autocomplete="off" target="_blank">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required placeholder="nombre Usuario"><br><br>
+
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" required placeholder="correo@ejemplo.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"><br><br>
+        <label for="telefono">Teléfono:</label>
+        <input type="number" id="telefono" name="telefono" required size="10"><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required minlength="6" maxlength="10"><br>
+        <label for="mensaje">Mensaje:</label><br>
+        <textarea id="mensaje" name="mensaje" rows="4" cols="50" required></textarea><br><br>
+        <label for="genero">Género:</label>
+        <label for="masculino">Masculino</label>
+        <input type="radio" id="masculino" name="genero" value="masculino" checked>
+        <input type="radio" id="femenino" name="genero" value="femenino" >Femenino
+        <input type="radio" id="otro" name="genero" value="otro" > otro<br><br>
+        <label for="intereses">Intereses:</label><br>
+        <input type="checkbox" id="deportes" name="intereses" value="deportes">
+        <label for="deportes">Deportes</label><br>
+        <input type="checkbox" id="musica" name="intereses" value="musica">
+        <label for="musica">Música</label><br>
+        <input type="checkbox" id="viajes" name="intereses" value="viajes">
+        <label for="viajes">Viajes</label><br><br>
+        <label for="pais">País:</label>
+        <select id="pais" name="pais" required>
+            <option value="">Seleccione un país</option>
+            <option value="0">Argentina</option>
+            <option value="1">Brasil</option>
+            <option value="2">Chile</option>
+            <option value="3">Colombia</option>
+            <option value="4">México</option>
+        </select>
+        <br><br>
+        <label for="ciudad">Ciudad:</label>
+        <select id="ciudad" name="ciudad" required>
+            <option value="" selected>Seleccione una ciudad</option>
+            <optgroup label="Argentina">
+                <option value="0">Buenos Aires</option>
+                <option value="1">Córdoba</option>
+                <option value="2">Rosario</option>  
+            </optgroup>
+            <optgroup label="Brasil">
+                <option value="0">Río de Janeiro</option>
+                <option value="1">São Paulo</option>
+                <option value="2">Brasilia</option> 
+            </optgroup>
+            <optgroup label="Chile">
+                <option value="0">Santiago</option>
+                <option value="1">Valparaíso</option>
+                <option value="2">Concepción</option>
+            </optgroup>
+            <optgroup label="Colombia">
+                <option value="0">Bogotá</option>
+                <option value="1">Medellín</option>
+                <option value="2">Cali</option>
+            </optgroup>
+            <optgroup label="México">
+                <option value="0">Ciudad de México</option>
+            </optgroup>
+        </select>
+        <br><br>
+        <input type="hidden" name="oculto" value="valor oculto">
+        <label for="archivo">Subir archivo:</label>
+        <input type="file" id="archivo" name="archivo"><br><br>
+        <label for="busqueda">Buscar:</label>
+        <input type="search" id="busqueda" name="busqueda" placeholder="Buscar...">
+        <label for="color">Color:</label>
+        <input type="color" id="color" name="color" value="#ff00ff"><br><br>
+        <label for="rango">Rango:</label>
+        <input type="range" id="rango" name="rango" min="0" max="100" value="50"><br><br>
+        <label for="fecha">Fecha:</label>
+        <input type="date" id="fecha" name="fecha"><br><br>
+        <label for="hora">Hora:</label>
+        <input type="time" id="hora" name="hora"><br><br>
+        <label for="mes">Mes:</label>
+        <input type="month" id="mes" name="mes"><br><br>
+        <label for="semana">Semana:</label>
+        <input type="week" id="semana" name="semana"><br><br>
+
+        <input type="reset" value="Restablecer">
+        <input type="submit" value="Enviar">
+    </form>
 
 </body>
 
