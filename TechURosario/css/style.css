@@ -1,17 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body{
-     background-color: #F54927;
-     background-image: url(../img/pexels-pixabay-163064.jpg);
-     background-size: cover;
-     background-position: center;
-     background-repeat: no-repeat;
+
+body {
+    background-color: #F54927;
+    background-image: url(../img/pexels-pixabay-163064.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
-p{
+
+p {
     color: #d6e908;
     font-family: 'Roboto', sans-serif;
     font-size: 1.25em;
@@ -21,7 +24,7 @@ p{
     text-decoration: line-through;
 }
 
-h1{
+h1 {
     color: #d6e908;
     font-family: 'Roboto', sans-serif;
     font-size: 3em;
@@ -31,22 +34,26 @@ h1{
     text-decoration: underline;
     text-transform: uppercase;
 }
-ul{
-     list-style-image: url(../imagenes/flor.png);
-     list-style-position: inside;
+
+ul {
+    list-style-image: url(../imagenes/flor.png);
+    list-style-position: inside;
 }
-table th{
+
+table th {
     width: 100%;
     height: 100%;
     border-collapse: collapse;
     border: 1px solid #d6e908;
 }
-td{
+
+td {
     border: 1px solid #d6e908;
     padding: 10px;
     text-align: center;
 }
-tr{
+
+tr {
     background-color: #d6e908;
     color: #F54927;
     font-family: 'Roboto', sans-serif;
@@ -55,7 +62,8 @@ tr{
     font-weight: 700;
     text-align: center;
 }
-a{
+
+a {
     color: #d6e908;
     font-family: 'Roboto', sans-serif;
     font-size: 1.25em;
@@ -64,7 +72,8 @@ a{
     text-align: center;
     text-decoration: none;
 }
-a:hover{
+
+a:hover {
     color: #13f434;
     font-family: 'Roboto', sans-serif;
     font-size: 1.25em;
@@ -73,7 +82,8 @@ a:hover{
     text-align: center;
     text-decoration: none;
 }
-a:link{
+
+a:link {
     color: #e77e15;
     font-family: 'Roboto', sans-serif;
     font-size: 1.25em;
@@ -82,7 +92,8 @@ a:link{
     text-align: center;
     text-decoration: none;
 }
-a:visited{
+
+a:visited {
     color: #1dcdf0;
     font-family: 'Roboto', sans-serif;
     font-size: 1.25em;
@@ -91,7 +102,8 @@ a:visited{
     text-align: center;
     text-decoration: none;
 }
-a:active{
+
+a:active {
     color: #ee0eba;
     font-family: 'Roboto', sans-serif;
     font-size: 1.25em;
