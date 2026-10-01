@@ -1,227 +1,1490 @@
+/* =========================================================
+   1. RESET
+========================================================= */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+
+/* =========================================================
+   2. VARIABLES
+========================================================= */
+
 :root {
-    --fondo:#080b18;
-    --fondo-card:#111827;
-    --texto:#f8fafc;
-    --texto-secundario:#94a3b8;
-    --azul:#3b82f6;
-    --morado:#8b5cf6;
-    --cyan:#06b6d4;
-    --rosa:#ec4899;
+
+    --fondo: #080b18;
+
+    --fondo-card: #111827;
+
+    --texto: #f8fafc;
+
+    --texto-secundario: #94a3b8;
+
+    --azul: #3b82f6;
+
+    --morado: #8b5cf6;
+
+    --cyan: #06b6d4;
+
+    --rosa: #ec4899;
+
 }
+
+
+/* =========================================================
+   3. ESTILOS GENERALES
+========================================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+
 body {
-    font-family: Arial, sans-serif;
-   background: var(--fondo);
-    color: white;
-}
 
- /*class: grupo de elementos .*/
-.tarjeta {
-    background: var(--fondo-card);
-    border-radius: 8px;
-    padding: 20px;
-    margin: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-/*id iedentificador paraun 
-elemento en especifico #*/
- #inicio {
-    min-height: 500px;
-}
-/*
-degradados lineales
-background: linear-gradient(
-    90deg,
-    #2563eb,
-    #7c3aed
-);
-degradados radiales
-background: radial-gradient(
-    circle,
-    #2563eb,
-    #7c3aed
-);*/
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
-.card {
-    border: 2px solid transparent;
     background:
-        linear-gradient(#1e293b, #1e293b) padding-box,
+        #080b18;
+
+    color:
+        var(--texto);
+
+    line-height:
+        1.6;
+}
+
+
+/* =========================================================
+   4. HERO
+========================================================= */
+
+.hero {
+
+    min-height:
+        550px;
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    text-align:
+        center;
+
+    padding:
+        50px 20px;
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+
+    /* DEGRADADO LINEAL */
+
+    background:
         linear-gradient(
             135deg,
-            #06b6d4,
-            #8b5cf6
-        ) border-box;
+            #020617,
+            #172554,
+            #4c1d95
+        );
 
-    border-radius: 25px;
+
+    /* ANIMACIÓN */
+
+    animation:
+        entradaHero 1.2s ease;
 }
 
-.avatar {
-     width: 100px;
-    height: 100px;
-    border-radius: 50%;
+
+/* =========================================================
+   DEGRADADO RADIAL
+========================================================= */
+
+.hero::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        500px;
+
+    height:
+        500px;
+
+    border-radius:
+        50%;
+
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(59,130,246,.35),
+            transparent 70%
+        );
+
+
+    top:
+        -200px;
+
+    right:
+        -100px;
+
+
+    animation:
+        orbitar 8s linear infinite;
 }
-/*shadow
-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-box-shadow:
-    0 10px 30px rgba(0,0,0,.3),
-    0 0 40px rgba(59,130,246,.25);
-*/
-h2 {
+
+
+/* SEGUNDO RESPLANDOR */
+
+.hero::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        350px;
+
+    height:
+        350px;
+
+    border-radius:
+        50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(236,72,153,.25),
+            transparent 70%
+        );
+
+    bottom:
+        -180px;
+
+    left:
+        -100px;
+
+    animation:
+        orbitar 10s linear infinite reverse;
+}
+
+
+.hero-content {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    max-width:
+        800px;
+}
+
+
+/* =========================================================
+   TEXTO
+========================================================= */
+
+.etiqueta {
+
+    display:
+        inline-block;
+
+    color:
+        #93c5fd;
+
+    font-size:
+        13px;
+
+    letter-spacing:
+        5px;
+
+    margin-bottom:
+        20px;
+
+
+    /* RESPLANDOR DE TEXTO */
+
     text-shadow:
-        0 5px 15px rgba(0,0,0,.4);
+        0 0 15px #3b82f6;
+
+
+    animation:
+        aparecer 1s ease;
 }
-h3 {
+
+
+.hero h1 {
+
+    font-size:
+        clamp(2.5rem, 7vw, 5rem);
+
+    line-height:
+        1.1;
+
+    margin-bottom:
+        20px;
+
+
+    /* TEXT SHADOW */
+
     text-shadow:
-        0 0 10px #60a5fa,
-        0 0 30px #2563eb;
+        0 5px 20px rgba(0,0,0,.5),
+        0 0 35px rgba(59,130,246,.35);
+
+
+    animation:
+        tituloEntrada 1.2s ease;
 }
-/*transiciones*/
-.card:hover {
-     box-shadow:
-        0 20px 50px rgba(37,99,235,.5);
+
+
+.hero p {
+
+    color:
+        #cbd5e1;
+
+    font-size:
+        1.1rem;
+
+    margin-bottom:
+        35px;
+
+    animation:
+        aparecer 1.5s ease;
 }
-.card {
+
+
+/* =========================================================
+   BOTÓN HERO
+========================================================= */
+
+.btn-explorar {
+
+    display:
+        inline-block;
+
+    padding:
+        14px 25px;
+
+    border-radius:
+        50px;
+
+    text-decoration:
+        none;
+
+    color:
+        white;
+
+    font-weight:
+        bold;
+
+
+    /* DEGRADADO */
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--azul),
+            var(--morado)
+        );
+
+
     box-shadow:
-    0 10px 30px rgba(0,0,0,.3);
-    transition: 
-     box-shadow 0.3s ease;
+        0 10px 30px rgba(59,130,246,.35);
+
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
 }
-.titulo {
-    color: white;
+
+
+.btn-explorar:hover {
+
+    transform:
+        translateY(-5px)
+        scale(1.04);
+
+    box-shadow:
+        0 15px 45px rgba(59,130,246,.6);
+}
+
+
+/* =========================================================
+   CONTENEDOR
+========================================================= */
+
+.contenedor {
+
+    width:
+        min(1200px, 90%);
+
+    margin:
+        auto;
+
+    padding:
+        90px 0;
+}
+
+
+/* =========================================================
+   INTRODUCCIÓN
+========================================================= */
+
+.introduccion {
+
+    text-align:
+        center;
+
+    margin-bottom:
+        55px;
+}
+
+
+.mini-titulo {
+
+    color:
+        var(--cyan);
+
+    font-size:
+        12px;
+
+    letter-spacing:
+        4px;
+
+    font-weight:
+        bold;
+
+    text-shadow:
+        0 0 15px rgba(6,182,212,.7);
+}
+
+
+.introduccion h2 {
+
+    font-size:
+        2.5rem;
+
+    margin:
+        10px 0;
+}
+
+
+.introduccion p {
+
+    color:
+        var(--texto-secundario);
+}
+
+
+/* =========================================================
+   GALERÍA
+========================================================= */
+
+.galeria {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(260px, 1fr)
+        );
+
+    gap:
+        35px;
+
+
+    /* PERSPECTIVA 3D */
+
+    perspective:
+        1200px;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.card {
+
+    background:
+        var(--fondo-card);
+
+    border-radius:
+        25px;
+
+    overflow:
+        hidden;
+
+    position:
+        relative;
+
+
+    /*
+       BORDE DEGRADADO
+    */
+
+    border:
+        2px solid transparent;
+
+    background-image:
+        linear-gradient(
+            var(--fondo-card),
+            var(--fondo-card)
+        ),
+        linear-gradient(
+            135deg,
+            #3b82f6,
+            #8b5cf6,
+            #ec4899
+        );
+
+    background-origin:
+        border-box;
+
+    background-clip:
+        padding-box,
+        border-box;
+
+
+    /*
+       SOMBRA
+    */
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.35);
+
+
+    /*
+       TRANSICIONES
+    */
+
+    transition:
+        transform .6s cubic-bezier(.2,.8,.2,1),
+        box-shadow .6s ease,
+        filter .6s ease;
+
+
+    /*
+       ANIMACIÓN DE ENTRADA
+    */
+
+    opacity:
+        0;
+
+    animation:
+        entradaCard .9s ease forwards;
+}
+
+
+/* =========================================================
+   ANIMACIONES ESCALONADAS
+========================================================= */
+
+.card:nth-child(1) {
+
+    animation-delay:
+        .2s;
+}
+
+.card:nth-child(2) {
+
+    animation-delay:
+        .4s;
+}
+
+.card:nth-child(3) {
+
+    animation-delay:
+        .6s;
+}
+
+.card:nth-child(4) {
+
+    animation-delay:
+        .8s;
+}
+
+
+/* =========================================================
+   HOVER 3D
+========================================================= */
+
+.card:hover {
+
+    transform:
+        translateY(-15px)
+        rotateX(5deg)
+        rotateY(8deg)
+        scale(1.02);
+
+
+    /*
+       SOMBRA + RESPLANDOR
+    */
+
+    box-shadow:
+        0 25px 50px rgba(0,0,0,.45),
+        0 0 35px rgba(59,130,246,.25);
+
+
+    filter:
+        brightness(1.08);
+}
+
+
+/* =========================================================
+   IMAGEN
+========================================================= */
+
+.imagen-personaje {
+
+    height:
+        260px;
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+}
+
+
+.imagen-personaje img {
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    object-fit:
+        cover;
+
+
+    /*
+       TRANSICIÓN
+    */
+
+    transition:
+        transform .8s ease,
+        filter .8s ease;
+}
+
+
+.card:hover .imagen-personaje img {
+
+    transform:
+        scale(1.15)
+        rotate(2deg);
+
+
+    filter:
+        brightness(1.2)
+        saturate(1.3);
+}
+
+
+/* =========================================================
+   BADGE
+========================================================= */
+
+.badge {
+
+    position:
+        absolute;
+
+    top:
+        18px;
+
+    right:
+        18px;
+
+    padding:
+        7px 13px;
+
+    border-radius:
+        50px;
+
+    background:
+        rgba(15,23,42,.75);
+
+    backdrop-filter:
+        blur(10px);
+
+    border:
+        1px solid rgba(255,255,255,.2);
+
+    font-size:
+        11px;
+
+    font-weight:
+        bold;
+
+    letter-spacing:
+        1px;
+
+
+    transition:
+        transform .4s ease,
+        background .4s ease;
+}
+
+
+.card:hover .badge {
+
+    transform:
+        rotate(-5deg)
+        scale(1.1);
+
+    background:
+        var(--azul);
+
+    box-shadow:
+        0 0 20px rgba(59,130,246,.7);
+}
+
+
+/* =========================================================
+   CONTENIDO CARD
+========================================================= */
+
+.contenido-card {
+
+    padding:
+        28px;
+}
+
+
+.categoria {
+
+    font-size:
+        11px;
+
+    color:
+        var(--cyan);
+
+    letter-spacing:
+        2px;
+
+    font-weight:
+        bold;
+}
+
+
+.contenido-card h3 {
+
+    font-size:
+        1.8rem;
+
+    margin:
+        7px 0 12px;
+
 
     transition:
         color .3s ease,
         text-shadow .3s ease;
 }
 
-.titulo:hover {
-    color: #60a5fa;
+
+.card:hover h3 {
+
+    color:
+        #60a5fa;
 
     text-shadow:
-        0 0 20px #2563eb;
-}
-/*transformaciones en 2d*/
-/*scale()*/
-.card:hover {
-    transform: scale(1.05);
-}
-/*rotate()*/
-.card:hover {
-    transform: rotate(5deg);
-}
-/*skew()*/
-.card:hover {
-    transform: skew(10deg, 5deg);
-}
-/*translate()*/
-.card:hover {
-    transform: translate(10px, 10px);
-}
-/*transformaciones en 3d*/
-.contenedor {
-    perspective: 1000px;
-}
-.card:hover {
-    transform: 
-    rotateY(180deg)
-    rotateX(180deg)
-    translateY(-10px);
+        0 0 20px rgba(59,130,246,.7);
 }
 
-.escena {
-    perspective: 1000px;
+
+.contenido-card p {
+
+    color:
+        var(--texto-secundario);
+
+    font-size:
+        .95rem;
+
+    margin-bottom:
+        22px;
 }
 
-.tarjeta {
+
+/* =========================================================
+   PODER
+========================================================= */
+
+.poder {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        14px;
+
+    padding:
+        15px;
+
+    border-radius:
+        15px;
+
+    background:
+        #080b18;
+
+    margin-bottom:
+        20px;
+
+
     transition:
-        transform .6s ease;
+        transform .4s ease,
+        background .4s ease,
+        box-shadow .4s ease;
 }
 
-.tarjeta:hover {
+
+.icono-poder {
+
+    font-size:
+        28px;
+
+    transition:
+        transform .5s ease;
+}
+
+
+.card:hover .poder {
+
     transform:
-        rotateY(15deg)
-        rotateX(5deg)
+        translateX(5px);
+
+    background:
+        #172554;
+
+    box-shadow:
+        inset 0 0 20px rgba(59,130,246,.1);
+}
+
+
+.card:hover .icono-poder {
+
+    transform:
+        scale(1.3)
+        rotate(15deg);
+}
+
+
+.poder strong {
+
+    display:
+        block;
+}
+
+
+.poder small {
+
+    color:
+        var(--texto-secundario);
+}
+
+
+/* =========================================================
+   BOTÓN DE TARJETA
+========================================================= */
+
+.btn-card {
+
+    width:
+        100%;
+
+    padding:
+        13px;
+
+    border:
+        none;
+
+    border-radius:
+        12px;
+
+    cursor:
+        pointer;
+
+    color:
+        white;
+
+    font-weight:
+        bold;
+
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #7c3aed
+        );
+
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        filter .3s ease;
+}
+
+
+.btn-card:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(59,130,246,.5);
+
+    filter:
+        brightness(1.15);
+}
+
+
+.btn-card:active {
+
+    transform:
+        scale(.96);
+}
+
+
+/* =========================================================
+   PERSONAJE VELOCIDAD
+========================================================= */
+
+.personaje-velocidad:hover {
+
+    transform:
+        translateY(-15px)
+        rotateY(-10deg)
         scale(1.03);
 }
-/*animaciones*/
-@keyframes girar {
-    0% {
-        transform: rotate(0deg);
+
+
+/* =========================================================
+   PERSONAJE TECNOLOGÍA
+========================================================= */
+
+.personaje-tecnologia {
+
+    animation-name:
+        entradaCard,
+        pulsoTecnologico;
+
+    animation-duration:
+        .9s,
+        3s;
+
+    animation-delay:
+        .4s,
+        2s;
+
+    animation-fill-mode:
+        forwards,
+        both;
+
+    animation-iteration-count:
+        1,
+        infinite;
+}
+
+
+/* =========================================================
+   PERSONAJE MAGIA
+========================================================= */
+
+.personaje-magia {
+
+    position:
+        relative;
+}
+
+
+.personaje-magia::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        -3px;
+
+    border-radius:
+        27px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ec4899,
+            #8b5cf6,
+            #06b6d4,
+            #ec4899
+        );
+
+    background-size:
+        300% 300%;
+
+    z-index:
+        -1;
+
+    animation:
+        bordeMagico 4s linear infinite;
+}
+
+
+/* =========================================================
+   PERSONAJE HIELO
+========================================================= */
+
+.personaje-hielo:hover {
+
+    box-shadow:
+        0 25px 50px rgba(0,0,0,.4),
+        0 0 25px rgba(6,182,212,.7),
+        0 0 60px rgba(59,130,246,.35);
+}
+
+
+/* =========================================================
+   PANEL CONCEPTOS
+========================================================= */
+
+.panel-conceptos {
+
+    margin-top:
+        100px;
+
+    padding:
+        50px 35px;
+
+    border-radius:
+        30px;
+
+    text-align:
+        center;
+
+
+    background:
+        radial-gradient(
+            circle at center,
+            #172554,
+            #0f172a
+        );
+
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.3);
+}
+
+
+.panel-conceptos h2 {
+
+    margin:
+        10px 0 35px;
+
+    font-size:
+        2rem;
+}
+
+
+.conceptos-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(160px, 1fr)
+        );
+
+    gap:
+        20px;
+}
+
+
+.concepto {
+
+    padding:
+        25px 15px;
+
+    border-radius:
+        18px;
+
+    background:
+        rgba(255,255,255,.04);
+
+    border:
+        1px solid rgba(255,255,255,.08);
+
+
+    transition:
+        transform .4s ease,
+        background .4s ease,
+        box-shadow .4s ease;
+}
+
+
+.concepto:hover {
+
+    transform:
+        translateY(-8px)
+        scale(1.03);
+
+    background:
+        rgba(59,130,246,.1);
+
+    box-shadow:
+        0 10px 30px rgba(59,130,246,.15);
+}
+
+
+.concepto span {
+
+    font-size:
+        30px;
+}
+
+
+.concepto h3 {
+
+    margin:
+        10px 0 5px;
+}
+
+
+.concepto p {
+
+    color:
+        var(--texto-secundario);
+
+    font-size:
+        .85rem;
+}
+
+
+/* =========================================================
+   RETO
+========================================================= */
+
+.reto {
+
+    margin-top:
+        80px;
+
+    padding:
+        60px 30px;
+
+    border-radius:
+        30px;
+
+    text-align:
+        center;
+
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #7c3aed,
+            #db2777
+        );
+
+
+    background-size:
+        200% 200%;
+
+
+    animation:
+        gradienteMovimiento 6s ease infinite;
+}
+
+
+.reto span {
+
+    font-size:
+        12px;
+
+    letter-spacing:
+        3px;
+
+    font-weight:
+        bold;
+}
+
+
+.reto h2 {
+
+    font-size:
+        2.5rem;
+
+    margin:
+        10px 0;
+}
+
+
+.reto p {
+
+    max-width:
+        600px;
+
+    margin:
+        0 auto 25px;
+
+    color:
+        #e0e7ff;
+}
+
+
+.btn-reto {
+
+    display:
+        inline-block;
+
+    padding:
+        12px 22px;
+
+    border-radius:
+        50px;
+
+    background:
+        white;
+
+    color:
+        #312e81;
+
+    text-decoration:
+        none;
+
+    font-weight:
+        bold;
+
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+
+.btn-reto:hover {
+
+    transform:
+        translateY(-4px)
+        scale(1.05);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.25);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+
+    padding:
+        35px;
+
+    text-align:
+        center;
+
+    color:
+        #64748b;
+
+    border-top:
+        1px solid #1e293b;
+}
+
+
+footer p:first-child {
+
+    margin-bottom:
+        5px;
+
+    color:
+        #94a3b8;
+}
+
+
+/* =========================================================
+   KEYFRAMES
+========================================================= */
+
+
+/* Entrada general */
+
+@keyframes aparecer {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            translateY(20px);
     }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* Entrada del hero */
+
+@keyframes entradaHero {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            scale(1.05);
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            scale(1);
+    }
+}
+
+
+/* Entrada del título */
+
+@keyframes tituloEntrada {
+
+    0% {
+
+        opacity:
+            0;
+
+        transform:
+            translateY(40px)
+            scale(.8);
+    }
+
+    70% {
+
+        transform:
+            translateY(-5px)
+            scale(1.03);
+    }
+
     100% {
-        transform: rotate(360deg);
+
+        opacity:
+            1;
+
+        transform:
+            translateY(0)
+            scale(1);
     }
 }
-@keyframes aparecer{
-from {
-    opacity: 0;
-    transform: translateY(-20px);
-}
-to {
-    opacity: 1;
-    transform: translateY(0);
-}
-}
 
-.cards{
-animation: aparecer 1s ease forwards;
-}
 
-@keyframes flotar {
+/* Entrada de tarjetas */
+
+@keyframes entradaCard {
 
     from {
-        transform: translateY(0);
+
+        opacity:
+            0;
+
+        transform:
+            translateY(60px)
+            rotateX(15deg)
+            scale(.9);
     }
 
     to {
-        transform: translateY(-15px);
+
+        opacity:
+            1;
+
+        transform:
+            translateY(0)
+            rotateX(0)
+            scale(1);
     }
-
-}
-.personaje {
-    animation:
-        flotar 2s ease-in-out infinite alternate;
-}
-@keyframes girar {
-
-    from {
-        transform: rotate(0);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-
-}
-.icono {
-    animation:
-        girar 4s linear infinite;
 }
 
-@keyframes resplandor {
+
+/* Movimiento de las luces */
+
+@keyframes orbitar {
 
     0% {
-        box-shadow:
-            0 0 5px #60a5fa;
+
+        transform:
+            translate(0,0)
+            scale(1);
     }
 
     50% {
-        box-shadow:
-            0 0 30px #2563eb;
+
+        transform:
+            translate(-80px,50px)
+            scale(1.2);
     }
 
     100% {
-        box-shadow:
-            0 0 5px #60a5fa;
-    }
 
+        transform:
+            translate(0,0)
+            scale(1);
+    }
 }
 
-.personaje-destacada {
-    animation:
-        resplandor 2s ease-in-out infinite;
+
+/* Pulso tecnológico */
+
+@keyframes pulsoTecnologico {
+
+    0% {
+
+        box-shadow:
+            0 15px 35px rgba(0,0,0,.35);
+    }
+
+    50% {
+
+        box-shadow:
+            0 15px 35px rgba(0,0,0,.35),
+            0 0 35px rgba(6,182,212,.5);
+    }
+
+    100% {
+
+        box-shadow:
+            0 15px 35px rgba(0,0,0,.35);
+    }
+}
+
+
+/* Borde mágico */
+
+@keyframes bordeMagico {
+
+    0% {
+
+        background-position:
+            0% 50%;
+    }
+
+    50% {
+
+        background-position:
+            100% 50%;
+    }
+
+    100% {
+
+        background-position:
+            0% 50%;
+    }
+}
+
+
+/* Movimiento del degradado */
+
+@keyframes gradienteMovimiento {
+
+    0% {
+
+        background-position:
+            0% 50%;
+    }
+
+    50% {
+
+        background-position:
+            100% 50%;
+    }
+
+    100% {
+
+        background-position:
+            0% 50%;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .hero {
+
+        min-height:
+            450px;
+    }
+
+    .contenedor {
+
+        width:
+            92%;
+    }
+
+    .contenido-card {
+
+        padding:
+            22px;
+    }
+
+    .reto {
+
+        padding:
+            45px 20px;
+    }
+
+    .reto h2 {
+
+        font-size:
+            2rem;
+    }
+
 }

@@ -10,77 +10,455 @@
 
     <title>Mi Universo de Personajes</title>
 
+    <!-- CSS EXTERNO -->
     <link rel="stylesheet" href="style.css">
 
 </head>
 
+
 <body>
 
-    <header>
+    <!-- ==================================================
+         ENCABEZADO
+    =================================================== -->
 
-        <h1>Mis Personajes Favoritos</h1>
+    <header id="inicio" class="hero">
 
-        <p>
-            Una galería creada con HTML y CSS.
-        </p>
+        <div class="hero-content">
+
+            <span class="etiqueta">
+                ✦ UNIVERSO CSS3 ✦
+            </span>
+
+            <h1>
+                Mis Personajes Favoritos
+            </h1>
+
+            <p>
+                Una galería creada con HTML5 y CSS3,
+                utilizando transiciones, transformaciones
+                y animaciones.
+            </p>
+
+            <a href="#personajes" class="btn-explorar">
+                Explorar personajes ↓
+            </a>
+
+        </div>
 
     </header>
 
 
-    <main>
-<div class="tarjeta">
-    Personaje 1
-</div>
-<div class="tarjeta">
-    Personaje 2
-</div>
-        <section>
+    <!-- ==================================================
+         CONTENIDO PRINCIPAL
+    =================================================== -->
 
-            <h2>Mis personajes</h2>
+    <main id="personajes" class="contenedor">
 
-            <article class="card">
-                <h3>Flash</h3>
 
-                <p>
-                    Personaje relacionado con la velocidad.
-                </p>
+        <!-- INTRODUCCIÓN -->
+
+        <section class="introduccion">
+
+            <span class="mini-titulo">
+                ⚡ GALERÍA INTERACTIVA
+            </span>
+
+            <h2>
+                El poder está en el CSS
+            </h2>
+
+            <p>
+                Cada personaje representa un efecto visual
+                diferente construido únicamente con CSS.
+            </p>
+
+        </section>
+
+
+        <!-- ==================================================
+             GALERÍA
+        =================================================== -->
+
+        <section class="galeria">
+
+
+            <!-- ==================================================
+                 PERSONAJE 1
+            =================================================== -->
+
+            <article class="card personaje-velocidad">
+
+                <div class="imagen-personaje">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1531259683007-016a7b628fc3?auto=format&fit=crop&w=800&q=80"
+                        alt="Personaje veloz"
+                    >
+
+                    <span class="badge">
+                        ⚡ VELOCIDAD
+                    </span>
+
+                </div>
+
+
+                <div class="contenido-card">
+
+                    <span class="categoria">
+                        HÉROE
+                    </span>
+
+                    <h3>
+                        Flash
+                    </h3>
+
+                    <p>
+                        Un personaje capaz de moverse a velocidades
+                        extraordinarias.
+                    </p>
+
+
+                    <div class="poder">
+
+                        <span class="icono-poder">
+                            ⚡
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Poder especial
+                            </strong>
+
+                            <small>
+                                Velocidad extrema
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <button class="btn-card">
+                        Activar poder
+                    </button>
+
+                </div>
+
             </article>
-              <article class="icono">
-                <h3>Superman</h3>
 
-                <p>
-                    Personaje relacionado con la velocidad.
-                </p>
+
+
+            <!-- ==================================================
+                 PERSONAJE 2
+            =================================================== -->
+
+            <article class="card personaje-tecnologia">
+
+                <div class="imagen-personaje">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80"
+                        alt="Robot tecnológico"
+                    >
+
+                    <span class="badge">
+                        🤖 TECNOLOGÍA
+                    </span>
+
+                </div>
+
+
+                <div class="contenido-card">
+
+                    <span class="categoria">
+                        TECNOLÓGICO
+                    </span>
+
+                    <h3>
+                        Cyber
+                    </h3>
+
+                    <p>
+                        Una inteligencia artificial capaz de analizar
+                        grandes cantidades de información.
+                    </p>
+
+
+                    <div class="poder">
+
+                        <span class="icono-poder">
+                            🤖
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Poder especial
+                            </strong>
+
+                            <small>
+                                Inteligencia artificial
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <button class="btn-card">
+                        Activar poder
+                    </button>
+
+                </div>
+
             </article>
 
 
-            <article class="personaje"
-                <h3>Cyber</h3>
 
-                <p>
-                    Personaje relacionado con la tecnología.
-                </p>
+            <!-- ==================================================
+                 PERSONAJE 3
+            =================================================== -->
+
+            <article class="card personaje-magia">
+
+                <div class="imagen-personaje">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80"
+                        alt="Personaje mágico"
+                    >
+
+                    <span class="badge">
+                        ✨ MAGIA
+                    </span>
+
+                </div>
+
+
+                <div class="contenido-card">
+
+                    <span class="categoria">
+                        FANTASÍA
+                    </span>
+
+                    <h3>
+                        Arcana
+                    </h3>
+
+                    <p>
+                        Una hechicera capaz de controlar la energía
+                        y crear portales dimensionales.
+                    </p>
+
+
+                    <div class="poder">
+
+                        <span class="icono-poder">
+                            ✨
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Poder especial
+                            </strong>
+
+                            <small>
+                                Energía dimensional
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <button class="btn-card">
+                        Activar poder
+                    </button>
+
+                </div>
+
             </article>
 
 
-            <article class="personaje-destacada ">
-                <h3>Arcana</h3>
 
-                <p>
-                    Personaje relacionado con la magia.
-                </p>
+            <!-- ==================================================
+                 PERSONAJE 4
+            =================================================== -->
+
+            <article class="card personaje-hielo">
+
+                <div class="imagen-personaje">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=800&q=80"
+                        alt="Personaje de hielo"
+                    >
+
+                    <span class="badge">
+                        ❄️ HIELO
+                    </span>
+
+                </div>
+
+
+                <div class="contenido-card">
+
+                    <span class="categoria">
+                        ELEMENTAL
+                    </span>
+
+                    <h3>
+                        Frost
+                    </h3>
+
+                    <p>
+                        Un personaje capaz de controlar el frío
+                        y congelar cualquier superficie.
+                    </p>
+
+
+                    <div class="poder">
+
+                        <span class="icono-poder">
+                            ❄️
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Poder especial
+                            </strong>
+
+                            <small>
+                                Control del hielo
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <button class="btn-card">
+                        Activar poder
+                    </button>
+
+                </div>
+
             </article>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             PANEL DE CONCEPTOS
+        =================================================== -->
+
+        <section id="conceptos" class="panel-conceptos">
+
+            <span class="mini-titulo">
+                CSS3
+            </span>
+
+            <h2>
+                ¿Qué está ocurriendo aquí?
+            </h2>
+
+            <div class="conceptos-grid">
+
+                <div class="concepto">
+                    <span>🎨</span>
+                    <h3>Degradados</h3>
+                    <p>
+                        Linear y radial gradients.
+                    </p>
+                </div>
+
+                <div class="concepto">
+                    <span>💡</span>
+                    <h3>Sombras</h3>
+                    <p>
+                        Box-shadow y text-shadow.
+                    </p>
+                </div>
+
+                <div class="concepto">
+                    <span>🔄</span>
+                    <h3>Transiciones</h3>
+                    <p>
+                        Cambios suaves entre estados.
+                    </p>
+                </div>
+
+                <div class="concepto">
+                    <span>🧊</span>
+                    <h3>3D</h3>
+                    <p>
+                        Perspectiva y rotaciones.
+                    </p>
+                </div>
+
+                <div class="concepto">
+                    <span>🎬</span>
+                    <h3>Animaciones</h3>
+                    <p>
+                        Keyframes y animation.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             RETO
+        =================================================== -->
+
+        <section id="reto" class="reto">
+
+            <span>
+                🚀 RETO FINAL
+            </span>
+
+            <h2>
+                Crea tu propio personaje
+            </h2>
+
+            <p>
+                Elige un personaje y crea una animación CSS
+                que represente su poder.
+            </p>
+
+            <a href="#inicio" class="btn-reto">
+                Volver al inicio ↑
+            </a>
 
         </section>
 
     </main>
 
 
-    <footer class="titulo">
+    <!-- ==================================================
+         FOOTER
+    =================================================== -->
 
-        HTML5 + CSS3
+    <footer>
+
+        <p>
+            HTML5 + CSS3
+        </p>
+
+        <p>
+            Transiciones · Transformaciones · Animaciones
+        </p>
 
     </footer>
+
 
 </body>
 
