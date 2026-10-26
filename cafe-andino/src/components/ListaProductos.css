@@ -1,0 +1,12 @@
+/* CSS Grid: las tarjetas se acomodan solas según el ancho disponible */
+.lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.vacio {
+  text-align: center;
+  color: var(--color-texto-suave);
+  padding: 32px 0;
+}

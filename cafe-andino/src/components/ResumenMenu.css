@@ -1,0 +1,31 @@
+.resumen {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 12px;
+}
+
+.resumen__tarjeta {
+  background: var(--color-superficie);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.resumen__tarjeta--alerta {
+  border-color: #f3c46b;
+  background: var(--color-advertencia-suave);
+}
+
+.resumen__etiqueta {
+  color: var(--color-texto-suave);
+  font-size: 0.85rem;
+}
+
+.resumen__valor {
+  font-size: 1.5rem;
+  color: var(--color-oscuro);
+  font-variant-numeric: tabular-nums;
+}

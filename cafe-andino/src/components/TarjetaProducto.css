@@ -1,0 +1,99 @@
+.tarjeta {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 4px;
+  background-color: var(--color-superficie);
+  border: 2px solid transparent;
+  border-radius: 16px;
+  padding: 36px 16px 16px;
+  box-shadow: 0 4px 14px rgb(0 0 0 / 0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.tarjeta:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgb(0 0 0 / 0.14);
+}
+
+/* Variante (modificador BEM) para la tarjeta que se está editando */
+.tarjeta--editando {
+  border-color: var(--color-acento);
+  background-color: var(--color-acento-suave);
+}
+
+.tarjeta__emoji {
+  font-size: 2.6rem;
+  line-height: 1.2;
+}
+
+.tarjeta__nombre {
+  margin: 4px 0 0;
+  color: var(--color-oscuro);
+  font-size: 1.1rem;
+}
+
+.tarjeta__categoria {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--color-texto-suave);
+}
+
+.tarjeta__descripcion {
+  margin: 4px 0 0;
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.tarjeta__precio {
+  margin: 6px 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-cafe);
+}
+
+.tarjeta__acciones {
+  display: flex;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.unidades {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.unidades__cantidad {
+  min-width: 28px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Etiqueta de estado en la esquina superior */
+.etiqueta {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.etiqueta--disponible {
+  background: var(--color-exito-suave);
+  color: var(--color-exito);
+}
+
+.etiqueta--pocas {
+  background: var(--color-advertencia-suave);
+  color: var(--color-advertencia);
+}
+
+.etiqueta--agotado {
+  background: var(--color-peligro-suave);
+  color: var(--color-peligro);
+}

@@ -1,0 +1,11 @@
+.footer {
+  background-color: var(--color-oscuro);
+  color: var(--color-claro);
+  text-align: center;
+  padding: 28px 16px;
+  margin-top: 32px;
+}
+
+.footer p {
+  margin: 4px 0;
+}

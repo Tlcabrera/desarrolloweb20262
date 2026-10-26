@@ -1,0 +1,14 @@
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.filtros input {
+  flex: 2 1 200px;
+}
+
+.filtros select {
+  flex: 1 1 170px;
+}

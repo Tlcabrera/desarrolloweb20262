@@ -1,0 +1,23 @@
+.hero {
+  text-align: center;
+  padding: 64px 24px;
+  background: linear-gradient(135deg, var(--color-cafe), var(--color-oscuro));
+  color: var(--color-claro);
+}
+
+.hero__titulo {
+  font-size: 2.4rem;
+  margin: 0 0 10px;
+}
+
+.hero__subtitulo {
+  font-size: 1.15rem;
+  margin: 0 0 28px;
+  opacity: 0.9;
+}
+
+@media (max-width: 600px) {
+  .hero__titulo {
+    font-size: 1.8rem;
+  }
+}
