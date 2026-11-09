@@ -1,0 +1,37 @@
+/*
+ * TOKENS DE DISEÑO: los valores del prototipo con nombre propio.
+ * Si el diseño cambia un color o una medida, se cambia aquí y nada más.
+ */
+:root {
+  /* Color */
+  --color-primario: #a6192e;
+  --color-primario-hover: #7d1222;
+  --color-fondo: #f4f4f5;
+  --color-superficie: #ffffff;
+  --color-borde: #d4d4d8;
+  --color-texto: #18181b;
+  --color-texto-suave: #52525b;
+  --color-exito: #15803d;
+  --color-error: #b91c1c;
+  --color-error-fondo: #fef2f2;
+  --color-foco: #2563eb;
+
+  /* Tipografía */
+  --fuente: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --texto-sm: 0.875rem; /* 14 px */
+  --texto-base: 1rem; /* 16 px */
+  --texto-xl: 1.75rem; /* 28 px */
+
+  /* Espaciado (múltiplos de 4 px) */
+  --espacio-1: 0.25rem; /* 4 px */
+  --espacio-2: 0.5rem; /* 8 px */
+  --espacio-3: 0.75rem; /* 12 px */
+  --espacio-4: 1rem; /* 16 px */
+  --espacio-6: 1.5rem; /* 24 px */
+  --espacio-8: 2rem; /* 32 px */
+
+  /* Bordes y sombras */
+  --radio-sm: 8px;
+  --radio-md: 12px;
+  --sombra: 0 8px 24px rgb(0 0 0 / 0.08);
+}

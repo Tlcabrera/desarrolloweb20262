@@ -1,28 +1,26 @@
 // capa controladores: traductor HTTP lee req llama el servicio y genera una respuesta res
 
-const servicio= require('../services/tareas.service');
+const servicio = require('../services/tareas.service');
 
-function listar(req,res){
-    res.status(200).json(servicio.listar());
+async function listar(req, res) {
+    res.status(200).json(await servicio.listar());
 }
 
-function obtener(req,res){
-    const id=Number(req.params.id);
-    res.status(200).json(servicio.obtener(id));
+async function obtener(req, res) {
+    res.status(200).json(await servicio.obtener(req.params.id));
 }
 
-function crear (req, res){
-    const nueva=servicio.crear(req.body.titulo);
+async function crear(req, res) {
+    const nueva = await servicio.crear(req.body.titulo);
     res.status(201).json(nueva);
 }
 
-function actualizar (req,res){
-   const id=Number(req.params.id);
-    res.status(200).json(servicio.actualizar(id,req.body));
+async function actualizar(req, res) {
+    res.status(200).json(await servicio.actualizar(req.params.id, req.body));
 }
 
-function eliminar (req,res){
-    servicio.eliminar(Number(req.params.id));
+async function eliminar(req, res) {
+    await servicio.eliminar(req.params.id);
     res.status(204).send()
 }
-module.exports={listar,obtener,crear,actualizar,eliminar}
+module.exports = { listar, obtener, crear, actualizar, eliminar };

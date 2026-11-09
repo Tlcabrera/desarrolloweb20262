@@ -1,0 +1,39 @@
+### Pruebas de la API de tareas con MongoDB (extensión REST Client de VS Code)
+@api = http://localhost:3000/api
+
+### 1. Listar → 200
+GET {{api}}/tareas
+
+### 2. Crear → 201 (copia el "id" de la respuesta)
+# @name crear
+POST {{api}}/tareas
+Content-Type: application/json
+
+{ "titulo": "Conectar MongoDB" }
+
+### REST Client guarda el id de la tarea creada
+@id = {{crear.response.body.id}}
+
+### 3. Consultar la tarea creada → 200
+GET {{api}}/tareas/{{id}}
+
+### 4. Marcar como completada → 200
+PATCH {{api}}/tareas/{{id}}
+Content-Type: application/json
+
+{ "completada": true }
+
+### 5. Eliminar → 204
+DELETE {{api}}/tareas/{{id}}
+
+### 6. Crear sin título → 400
+POST {{api}}/tareas
+Content-Type: application/json
+
+{ "titulo": "" }
+
+### 7. Id con formato inválido → 400
+GET {{api}}/tareas/123
+
+### 8. Id válido que no existe → 404
+GET {{api}}/tareas/6728f1a2b3c4d5e6f7a8b9c0

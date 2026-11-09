@@ -1,46 +1,39 @@
-// Capa de servicios para manejar la lógica de negocio 
-// relacionada con las tareas
-const HttpError = require("../utils/HttpError");
+// CAPA DE SERVICIOS: ahora los datos viven en MongoDB. Todas las funciones son async.
+const Tarea = require('../models/tarea.model');
+const HttpError = require('../utils/HttpError');
 
-//base de datos local
-
-let tareas=[
-    {id:1,titulo:"Realizar avances de Proyecto desarrollo web", completada:false},
-    {id:2,titulo:"Hacer tareas de real", completada:true},
-    {id:3,titulo:"estudiar para compleja", completada:true}
-];
-let siguienteId=4;
-
-function listar(){
-    return tareas;
+async function listar() {
+  return Tarea.find().sort({ createdAt: 1 }); // de la más antigua a la más nueva
 }
 
-function obtener(id){
-    const tarea=tareas.find((t)=>t.id===id);
-    if (!tarea){
-       throw new HttpError (404,`No existe la tarea con id ${id}`); 
-    }
-    return tarea;
+async function obtener(id) {
+  const tarea = await Tarea.findById(id);
+  if (!tarea) {
+    throw new HttpError(404, `No existe la tarea ${id}`);
+  }
+  return tarea;
 }
 
-function crear(titulo){
-    const nueva={id:siguienteId++, titulo,completada: false};
-    tareas.push(nueva);
-    return nueva;
+async function crear(titulo) {
+  return Tarea.create({ titulo }); // MongoDB genera el _id
 }
 
-function actualizar(id,cambios){
-    const tarea=obtener(id);
-    Object.assign(tarea,cambios);
-    return tarea;
+async function actualizar(id, cambios) {
+  const tarea = await Tarea.findByIdAndUpdate(id, cambios, {
+    returnDocument: 'after', // devuelve la tarea YA modificada
+    runValidators: true, // aplica las reglas del modelo también al modificar
+  });
+  if (!tarea) {
+    throw new HttpError(404, `No existe la tarea ${id}`);
+  }
+  return tarea;
 }
 
-function eliminar(id){
-    obtener(id);
-    tareas=tareas.filter((t)=>t.id!==id);
+async function eliminar(id) {
+  const tarea = await Tarea.findByIdAndDelete(id);
+  if (!tarea) {
+    throw new HttpError(404, `No existe la tarea ${id}`);
+  }
 }
 
-module.exports ={listar,obtener,crear,actualizar,eliminar};
-
-
-
+module.exports = { listar, obtener, crear, actualizar, eliminar };
